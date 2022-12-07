@@ -2,12 +2,12 @@ input = open("input\input_day2.txt", "r")
 
 def Calculate_Score (opponent_pick, round_result):
     sum = 0
-    RPS_list = [[0, "A"], [1, "B"], [2, "C"]]
-    LDW_list = [[0, "X"], [1, "Y"], [2, "Z"]]
-    for j, LDW in LDW_list:
+    RPS_list = ["A", "B", "C"]
+    LDW_list = ["X", "Y", "Z"]
+    for j, LDW in list(enumerate(LDW_list)):
         if round_result in LDW:
             sum += (j+2*j)
-            for k, RPS_letter in RPS_list:
+            for k, RPS_letter in list(enumerate(RPS_list)):
                 if opponent_pick in RPS_letter:
                     opponent_pick_index = k
                     if j == 1:
