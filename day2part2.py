@@ -12,18 +12,22 @@ def Calculate_Score (opponent_pick, round_result):
                     opponent_pick_index = k
                     if j == 1:
                         sum += (k+1)
+                        break
                     if j == 0:
                         if opponent_pick_index == 0:
                             my_pick_index = opponent_pick_index + 2
                         else:
                             my_pick_index = opponent_pick_index - 1
                         sum += (my_pick_index + 1)
+                        break
                     if j == 2:
                         if opponent_pick_index == 2:
                             my_pick_index = opponent_pick_index - 2
                         else:
                             my_pick_index = opponent_pick_index + 1
                         sum += (my_pick_index + 1)
+                        break
+            break
     print(opponent_pick, round_result, sum)
     return sum
 
